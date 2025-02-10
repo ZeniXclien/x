@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>ZeniX » Скачать</title>
+    <link rel="icon" type="image/png" href="img/logo.png" />
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- CSS Files -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="vendor/aos/aos.css" rel="stylesheet">
+    <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="css/main.css" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <style>
+        /*  Minor style override to fix the color issue. */
+        .footer .footer-links ul a {
+            color: var(--default-color);
+        }
+
+        .body {
+            background-color: var(--background-color);
+            color: var(--default-color);
+            font-family: 'Gilroy', sans-serif;
+        }
+
+        body::before {
+            background: url('img/menu.svg') repeat;
+            opacity: 0.2;
+            z-index: -1;
+        }
+
+        /*  Added for main section's specific styling  */
+        #header {
+            background-color: rgba(0, 0, 0, 0.00);
+            /* Transparent background */
+            backdrop-filter: blur(20px);
+            /* Apply blur effect */
+        }
+
+        .download-section {
+            padding: 120px 0 80px 0;
+            /* Increased top padding */
+            text-align: center;
+        }
+
+        /* Used from main.css to match the website's headings style */
+        h2 {
+            color: var(--heading-color);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            drop-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        p {
+            color: var(--default-color);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
+
+        .download-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 30px;
+            background-color: var(--accent-color);
+            color: var(--contrast-color);
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            border: 1px solid color-mix(in srgb, var(--accent-color), transparent 70%);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+            transition: transform 0.1s ease-out, background-color 0.2s ease-out, border-color 0.2s ease-out, color 0.2s ease-out; /* Faster Transitions */
+        }
+
+        .download-button span {
+            display: inline-block; /* Allows transition on the span */
+            transition: opacity 0.2s ease-out;
+        }
+
+        .download-button i {
+            margin-right: 10px;
+            font-size: 1.1rem;
+            transition: opacity 0.2s ease-out;
+        }
+
+        .download-button:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border-color: color-mix(in srgb, var(--accent-color), transparent 40%);
+        }
+
+        .download-button.downloading {
+            transform: scale(0.9);
+            opacity: 0.7;
+        }
+
+        .download-button.downloaded {
+            background-color: #28a745;
+            /* Green color for success */
+            border-color: #28a745;
+            color: white;
+        }
+
+        .download-button.downloaded span,
+        .download-button.downloaded i {
+            opacity: 0; /* Hide initial text and icon */
+        }
+
+        /* After downloaded tag is done, this styles are called*/
+        .download-button::after {
+            content: '\f00c';  /* Font Awesome checkmark */
+            font-family: FontAwesome;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            color: white;
+            font-size: 1.5rem;
+            transition: opacity 0.2s ease-out;
+        }
+
+        .download-button.downloaded::after {
+            opacity: 1; /* Show Checkmark */
+        }
+
+        body::before {
+            background: url('img/menu.svg') repeat;
+            opacity: 0.2;
+            z-index: -1;
+        }
+
+        h2 {
+            drop-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        /* Correct padding of the main tag*/
+        main.main{
+            padding-top: 0;
+        }
+
+        .body::before {
+            background: url('img/menu.svg') repeat;
+            opacity: 0.2;
+            z-index: -1;
+        }
+
+    </style>
+</head>
+
+<body class="index-page">
+
+<header>
+    <div>
+        <header id="header" class="header d-flex align-items-center fixed-top">
+            <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+                <a href="index.html" class="logo d-flex align-items-center me-auto">
+                    <img src="img/logo.png" alt="">
+                    <h1>ZeniX</h1>
+                </a>
+
+                <nav id="navmenu" class="navmenu">
+                    <ul>
+                        <li><a href="index.html#hero">Главная<br></a></li>
+                        <li><a href="index.html#footer">Документы</a></li>
+                    </ul>
+                    <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+                </nav>
+
+
+            </div>
+        </header>
+    </div>
+</header>
+
+<main class="main">
+    <section class="download-section section">
+        <div class="container" data-aos="fade-up">
+            <h2>Скачать ZeniX Клиент</h2>
+            <p>Окунитесь в мир Minecraft с улучшенным клиентом ZeniX! Мгновенная загрузка, оптимизированная работа и
+                постоянная поддержка. Начните свое приключение прямо сейчас!</p>
+            <a href="https://drive.google.com/uc?export=download&id=14nJw2uZ6WiPa8jiLBYo6nyXtgQUwgJAO"
+               class="download-button" id="downloadLink">
+                <i class="bi bi-cloud-download"></i> <span>Загрузить Сейчас</span>
+            </a>
+            <p>Возникли вопросы? Присоединяйтесь к нашему <a href="https://discord.gg/uE9XTJg9DE"
+                                                             style="color: var(--accent-color);">Discord
+                сообществу</a> для получения оперативной поддержки!</p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div>
+        <footer id="footer" class="footer">
+            <div class="container footer-top">
+                <div class="row gy-4">
+                    <div class="col-lg-4 col-md-6 footer-about">
+                        <a href="index.html" class="d-flex align-items-center">
+                            <span>ZeniX</span>
+                        </a>
+                        <div class="footer-contact pt-3">
+                            <p>Наш продукт не связан с MojangAB</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-3 footer-links">
+                        <h4>Навигация</h4>
+                        <ul>
+                            <li><i class="bi bi-chevron-right"></i> <a href="index.html">Главная</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="index.html#faq">Вопросы</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="index.html#alt-features">Наши качества</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-md-3 footer-links">
+                        <h4>Документы</h4>
+                        <ul>
+                            <li><i class="bi bi-chevron-right"></i> <a href="eula.html">Пользовательское соглашение</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="privacy_policy.html">Обработка данных</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-12">
+                        <h4>Наши социальные сети</h4>
+                        <p>Здесь мы собрали все наши официальные социальные сети, мы будем очень рады вашей подписке.</p>
+                        <div class="social-links d-flex">
+                            <a href="https://www.youtube.com/@ZeniX11111" target="_blank"><i class="bi bi-youtube"></i></a>
+                            <a href="https://t.me/ZeniX_recode" target="_blank"><i class="bi bi-telegram"></i></a>
+                            <a href="https://discord.gg/uE9XTJg9DE" target="_blank"><i class="bi bi-discord"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container copyright text-center mt-4">
+                <p>© <span>Copyright</span> <strong class="px-1 sitename">ZeniX</strong><span> All Rights Reserved</span></p>
+            </div>
+        </footer>
+    </div>
+</footer>
+
+<a href="index.html#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
+
+<!-- Script Files - INCLUDE ALL THE JAVASCRIPT -->
+<script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="vendor/php-email-form/validate.js"></script>
+<script src="vendor/aos/aos.js"></script>
+<script src="vendor/glightbox/js/glightbox.min.js"></script>
+<script src="vendor/purecounter/purecounter_vanilla.js"></script>
+<script src="vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="vendor/swiper/swiper-bundle.min.js"></script>
+
+<script>
+    document.addEventListener('keydown', function (event) {
+        if (event.ctrlKey && (event.key === 's' || event.key === 'S')) {
+            event.preventDefault();
+        }
+    });
+
+    document.addEventListener('contextmenu', function (event) {
+        event.preventDefault();
+    });
+</script>
+<script>
+    document.getElementById('downloadLink').addEventListener('click', function (event) {
+        const downloadLink = this;
+
+        downloadLink.classList.add('downloading'); //Start shrinking
+
+        setTimeout(function () {
+            downloadLink.classList.remove('downloading');
+            downloadLink.classList.add('downloaded'); //Set success color
+
+            // Start download after small pause
+            setTimeout(function () {
+                downloadLink.classList.remove('downloaded');
+                //Start the Download in fact!
+            }, 800); //After 0.8 second
+        }, 100); // Reduce the whole timeout to 0.1s to make it much faster
+
+    });
+</script>
+
+<script src="js/main.js"></script>
+
+</body>
+
+</html>
