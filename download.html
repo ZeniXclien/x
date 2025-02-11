@@ -1,32 +1,36 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
+    <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>ZeniX » Скачать</title>
-    <link rel="icon" type="image/png" href="img/logo.png" />
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+    <meta name="description" content="Скачать ZeniX Клиент - улучшенный клиент для Minecraft! Мгновенная загрузка и оптимизированная работа.">
+    <meta name="keywords" content="minecraft, клиент, zenix, скачать">
 
-    <!-- CSS Files -->
+    <link rel="icon" type="image/png" href="img/logo.png" />
+
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="vendor/aos/aos.css" rel="stylesheet">
-    <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="css/main.css" rel="stylesheet">
 
-    <meta charset="UTF-8">
     <style>
-        /*  Minor style override to fix the color issue. */
+        /* Minor style override to fix the color issue. */
         .footer .footer-links ul a {
             color: var(--default-color);
         }
 
-        .body {
+        body {
             background-color: var(--background-color);
             color: var(--default-color);
             font-family: 'Gilroy', sans-serif;
+        }
+
+        #header {
+            background-color: rgba(0, 0, 0, 0.00);
+            /* Transparent background */
+            backdrop-filter: blur(20px);
+            /* Apply blur effect */
         }
 
         body::before {
@@ -35,21 +39,11 @@
             z-index: -1;
         }
 
-        /*  Added for main section's specific styling  */
-        #header {
-            background-color: rgba(0, 0, 0, 0.00);
-            /* Transparent background */
-            backdrop-filter: blur(20px);
-            /* Apply blur effect */
-        }
-
         .download-section {
             padding: 120px 0 80px 0;
-            /* Increased top padding */
             text-align: center;
         }
 
-        /* Used from main.css to match the website's headings style */
         h2 {
             color: var(--heading-color);
             font-size: 2.5rem;
@@ -132,50 +126,41 @@
             opacity: 1; /* Show Checkmark */
         }
 
-        body::before {
-            background: url('img/menu.svg') repeat;
-            opacity: 0.2;
-            z-index: -1;
+        main.main{
+            padding-top: 0;
         }
 
         h2 {
             drop-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
-        /* Correct padding of the main tag*/
-        main.main{
-            padding-top: 0;
-        }
 
-        .body::before {
+        body::before {
             background: url('img/menu.svg') repeat;
             opacity: 0.2;
             z-index: -1;
         }
-
     </style>
 </head>
 
 <body class="index-page">
 
 <header>
-    <div>
+    <div th:replace="fragments/header :: header">
         <header id="header" class="header d-flex align-items-center fixed-top">
             <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
                 <a href="index.html" class="logo d-flex align-items-center me-auto">
-                    <img src="img/logo.png" alt="">
+                    <img src="img/logo.png" alt="Логотип Zenix">
                     <h1>ZeniX</h1>
                 </a>
 
                 <nav id="navmenu" class="navmenu">
                     <ul>
-                        <li><a href="index.html#hero">Главная<br></a></li>
+                        <li><a href="index.html#hero">Главная</a></li>
                         <li><a href="index.html#footer">Документы</a></li>
                     </ul>
                     <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
                 </nav>
-
-
             </div>
         </header>
     </div>
@@ -199,7 +184,7 @@
 </main>
 
 <footer>
-    <div>
+    <div th:replace="fragments/footer :: footer">
         <footer id="footer" class="footer">
             <div class="container footer-top">
                 <div class="row gy-4">
@@ -242,25 +227,18 @@
             </div>
 
             <div class="container copyright text-center mt-4">
-                <p>© <span>Copyright</span> <strong class="px-1 sitename">ZeniX</strong><span> All Rights Reserved</span></p>
+                <p>© <span>Copyright</span> <strong class="px-1 sitename">Zenix</strong><span> All Rights Reserved</span></p>
             </div>
         </footer>
     </div>
 </footer>
 
-<a href="index.html#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
         class="bi bi-arrow-up-short"></i></a>
 
-<!-- Script Files - INCLUDE ALL THE JAVASCRIPT -->
-<script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="vendor/php-email-form/validate.js"></script>
 <script src="vendor/aos/aos.js"></script>
-<script src="vendor/glightbox/js/glightbox.min.js"></script>
-<script src="vendor/purecounter/purecounter_vanilla.js"></script>
-<script src="vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-<script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
-<script src="vendor/swiper/swiper-bundle.min.js"></script>
+<script src="js/main.js"></script>
 
 <script>
     document.addEventListener('keydown', function (event) {
@@ -293,8 +271,5 @@
     });
 </script>
 
-<script src="js/main.js"></script>
-
 </body>
-
 </html>

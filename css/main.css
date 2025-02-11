@@ -1153,29 +1153,41 @@ section,
 /*--------------------------------------------------------------
 # Alt Features Section
 --------------------------------------------------------------*/
-.alt-features .icon-box {
-  display: flex;
+/*  _alt-features.scss */
+
+.alt-features .feature-item {
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    /*box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);*/ /* Optional: Add a subtle shadow */
 }
 
-.alt-features .icon-box h4 {
-  font-size: 20px;
-  font-weight: 700;
-  margin: 0 0 10px 0;
+.alt-features .feature-item:hover {
+    transform: translateY(-5px);
+    /*box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);*/ /* Optional: Enhance shadow on hover */
 }
 
-.alt-features .icon-box i {
-  font-size: 34px;
-  line-height: 44px;
-  color: var(--accent-color);
-  margin-right: 15px;
+.alt-features .feature-item i {
+    font-size: 40px;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+    display: block; /* Ensures proper spacing for block-level elements */
 }
 
-.alt-features .icon-box p {
-  font-size: 15px;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-  margin-bottom: 0;
+.alt-features .feature-item h4 {
+    font-size: 1.3rem; /* Use rem for scalable fonts */
+    font-weight: 600;
+    color: var(--heading-color);
+    margin-bottom: 10px;
 }
 
+.alt-features .feature-item p {
+    font-size: 1rem;
+    color: var(--default-color);
+    opacity: 0.8;
+    line-height: 1.5;
+}
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
